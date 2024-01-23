@@ -1,0 +1,165 @@
+@mixin breakpoint($point) {
+	@if $point==sm {
+		@media (min-width: 576px) {
+			@content;
+		}
+	} @else if $point==max-sm {
+		@media (max-width: 575px) {
+			@content;
+		}
+	} @else if $point==md {
+		@media (min-width: 768px) {
+			@content;
+		}
+	} @else if $point==max-md {
+		@media (max-width: 767px) {
+			@content;
+		}
+	} @else if $point==lg {
+		@media (min-width: 992px) {
+			@content;
+		}
+	} @else if $point==max-lg {
+		@media (max-width: 991px) {
+			@content;
+		}
+	} @else if $point==xl {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	} @else if $point==max-xl {
+		@media (max-width: 1199px) {
+			@content;
+		}
+	} @else if $point==xxl {
+		@media (min-width: 1400px) {
+			@content;
+		}
+	} @else if $point==max-xxl {
+		@media (max-width: 1399px) {
+			@content;
+		}
+	}
+}
+
+:root {
+	--primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+	--secondary-glow: linear-gradient(
+		to bottom right,
+		rgba(1, 65, 255, 0),
+		rgba(1, 65, 255, 0),
+		rgba(1, 65, 255, 0.3)
+	);
+	--title: #fff;
+	--title-rgb: 255, 255, 255;
+	--text: #f1f2f4;
+	--body: #0f0f0f;
+	--section: #1b1b1b;
+	--white: #ffffff;
+	--base: #52b4c1;
+	--body-fonts: "Manrope", sans-serif;
+	--heading-fonts: "Manrope", sans-serif;
+	--gradient: linear-gradient(90deg, #7f1ce9 -1.71%, #a71de7 105.13%);
+}
+body {
+	background: var(--body);
+	font-family: var(--body-fonts);
+	color: var(--text);
+	font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--title);
+	font-family: var(--heading-fonts);
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 54px;
+}
+h2 {
+	font-size: 45px;
+}
+h3 {
+	font-size: 37px;
+}
+h4 {
+	font-size: 31px;
+}
+h5 {
+	font-size: 26px;
+}
+h6 {
+	font-size: 22px;
+}
+@include breakpoint(max-md) {
+	h1 {
+		font-size: 34px;
+	}
+	h2 {
+		font-size: 28px;
+	}
+	h3 {
+		font-size: 24px;
+	}
+	h4 {
+		font-size: 22px;
+	}
+	h5 {
+		font-size: 18px;
+	}
+	h6 {
+		font-size: 16px;
+	}
+}
+@include breakpoint(max-sm) {
+	h1 {
+		font-size: 28px;
+	}
+	h2 {
+		font-size: 24px;
+	}
+	h3 {
+		font-size: 22px;
+	}
+	h4 {
+		font-size: 20px;
+	}
+	h5 {
+		font-size: 18px;
+	}
+	h6 {
+		font-size: 16px;
+	}
+}
+ul {
+	padding: 0;
+	margin: 0;
+	li {
+		list-style: none;
+	}
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	transition: all ease 0.3s;
+}
+img {
+	height: unset;
+}
+.right-top-image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	transform: translateY(-20%);
+	max-width: 50%;
+}
