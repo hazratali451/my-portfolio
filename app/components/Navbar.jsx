@@ -2,13 +2,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import useScroll from "../hooks/useScroll";
 import { ClearIcon, ContactIcon, HamburgerIcon } from "./Icon";
 
 const Navbar = () => {
 	const [open, setOpen] = React.useState(false);
+	const scroll = useScroll();
 	return (
 		<>
-			<header>
+			<header className={scroll > 0 ? "active" : ""}>
 				<div className="container">
 					<div className="header-wrapper">
 						<div className="logo">
@@ -42,7 +44,9 @@ const Navbar = () => {
 							</div>
 							<ul className="menu" onClick={() => setOpen(false)}>
 								<li>
-									<a href="#home">Home</a>
+									<a href="#home" className="active">
+										Home
+									</a>
 								</li>
 								<li>
 									<a href="#portfolio">Portfolio</a>
