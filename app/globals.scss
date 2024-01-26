@@ -621,3 +621,9 @@ header {
 		margin-bottom: 32px;
 	}
 }
+.skills-section {
+	padding-block: 60px;
+	@include breakpoint(max-md) {
+		padding-block: 0 40px;
+	}
+}
