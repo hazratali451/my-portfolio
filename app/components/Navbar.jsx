@@ -77,7 +77,14 @@ const Navbar = () => {
 						</div>
 					</div>
 				</div>
-				{open ? <div className="d-lg-none overlay" /> : ""}
+				{open ? (
+					<div
+						className="d-lg-none overlay"
+						onClick={() => setOpen(false)}
+					/>
+				) : (
+					""
+				)}
 			</header>
 		</>
 	);
