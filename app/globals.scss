@@ -86,7 +86,7 @@ h2 {
 	font-size: 45px;
 }
 h3 {
-	font-size: 37px;
+	font-size: 40px;
 }
 h4 {
 	font-size: 31px;
@@ -122,10 +122,10 @@ h6 {
 		font-size: 28px;
 	}
 	h2 {
-		font-size: 24px;
+		font-size: 26px;
 	}
 	h3 {
-		font-size: 22px;
+		font-size: 24px;
 	}
 	h4 {
 		font-size: 20px;
@@ -559,5 +559,65 @@ header {
 	padding: 100px 0;
 	@include breakpoint(max-md) {
 		padding: 80px 0;
+	}
+}
+.skills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	.skill {
+		border-radius: 12px;
+		background: #1b1b1b;
+		padding-block: 48px;
+		width: calc((100% / 6) - 24px * 5 / 6);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			object-fit: contain;
+		}
+		@include breakpoint(max-xl) {
+			padding-block: 36px;
+		}
+	}
+	@include breakpoint(max-lg) {
+		.skill {
+			width: calc((100% / 4) - 24px * 3 / 4);
+		}
+	}
+	@include breakpoint(max-md) {
+		.skill {
+			width: calc((100% / 3) - 24px * 2 / 3);
+		}
+	}
+	@include breakpoint(max-sm) {
+		gap: 12px;
+		.skill {
+			padding-block: 24px;
+			width: calc((100% / 3) - 12px * 2 / 3);
+			border-radius: 8px;
+			img {
+				width: 50px;
+				height: 50px;
+				max-width: 100%;
+			}
+		}
+	}
+}
+.section-title {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 48px;
+	gap: 20px;
+	.txt1 {
+		@include breakpoint(md) {
+			font-size: 20px;
+		}
+	}
+	@include breakpoint(max-md) {
+		gap: 12px;
+		margin-bottom: 32px;
 	}
 }
