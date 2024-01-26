@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Inter_Tight, Manrope } from "next/font/google";
 import Image from "next/image";
+import "swiper/scss";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./globals.scss";

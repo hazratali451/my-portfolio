@@ -217,3 +217,57 @@ export const Facebook = () => (
 		/>
 	</svg>
 );
+export const ArrowLeft = ({ id }) => (
+	<svg
+		width="54"
+		height="54"
+		viewBox="0 0 54 54"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<circle cx="27" cy="27" r="27" fill="white" fill-opacity="0.05" />
+		<g clip-path={`url(#${id})`}>
+			<path
+				d="M22.828 26H35V28H22.828L28.192 33.364L26.778 34.778L19 27L26.778 19.222L28.192 20.636L22.828 26Z"
+				fill="white"
+			/>
+		</g>
+		<defs>
+			<clipPath id={id}>
+				<rect
+					width="24"
+					height="24"
+					fill="white"
+					transform="translate(15 15)"
+				/>
+			</clipPath>
+		</defs>
+	</svg>
+);
+export const ArrowRight = ({ id }) => (
+	<svg
+		width="54"
+		height="54"
+		viewBox="0 0 54 54"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<circle cx="27" cy="27" r="27" fill="white" fill-opacity="0.05" />
+		<g clip-path={`url(#${id})`}>
+			<path
+				d="M31.172 26L25.808 20.636L27.222 19.222L35 27L27.222 34.778L25.808 33.364L31.172 28H19V26H31.172Z"
+				fill="white"
+			/>
+		</g>
+		<defs>
+			<clipPath id={id}>
+				<rect
+					width="24"
+					height="24"
+					fill="white"
+					transform="translate(15 15)"
+				/>
+			</clipPath>
+		</defs>
+	</svg>
+);
