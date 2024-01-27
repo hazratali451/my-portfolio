@@ -84,14 +84,14 @@ const ClientsFeedback = () => {
 							type="button"
 							onClick={() => goPrev()}
 						>
-							<ArrowLeft id="1" />
+							<ArrowLeft />
 						</button>
 						<button
 							className="bg-transparent no-gutter border-0"
 							type="button"
 							onClick={() => goNext()}
 						>
-							<ArrowRight id="1" />
+							<ArrowRight />
 						</button>
 					</div>
 				</div>
