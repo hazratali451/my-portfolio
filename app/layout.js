@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Inter_Tight, Manrope } from "next/font/google";
+import { Inter, Inter_Tight, Manrope } from "next/font/google";
 import Image from "next/image";
 import "swiper/scss";
 import Footer from "./components/Footer";
@@ -8,6 +8,7 @@ import "./globals.scss";
 
 const manrope = Manrope({ subsets: ["latin"] });
 const inter_tight = Inter_Tight({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
 	title: "Hazrat Ali",
@@ -17,7 +18,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={manrope.className + inter_tight.className}>
+			<body
+				className={
+					manrope.className + inter_tight.className + inter.className
+				}
+			>
 				<Image
 					src={"/img/noisy-shape1.png"}
 					alt={"noisy"}
