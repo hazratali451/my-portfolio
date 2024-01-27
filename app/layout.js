@@ -8,7 +8,11 @@ import "./globals.scss";
 
 const manrope = Manrope({ subsets: ["latin"] });
 const inter_tight = Inter_Tight({ subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+	weight: ["400", "500", "600", "700", "800"],
+	subsets: ["latin"],
+	display: "swap",
+});
 
 export const metadata = {
 	title: "Hazrat Ali",
