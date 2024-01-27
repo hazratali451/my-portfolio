@@ -1,5 +1,6 @@
 import Banner from "./components/Banner";
 import Blogs from "./components/Blogs";
+import ClientsFeedback from "./components/ClientsFeedback";
 import Skills from "./components/Skills";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
 			<Banner />
 			<Skills />
 			<Blogs />
+			<ClientsFeedback />
 		</>
 	);
 }
