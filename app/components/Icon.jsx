@@ -448,3 +448,32 @@ export const VideoIcon = () => (
 		/>
 	</svg>
 );
+export const ArrowIcon = () => (
+	<svg
+		width="24"
+		height="25"
+		viewBox="0 0 24 25"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<path
+			d="M9.00005 6.27002L15 12.2701L9 18.27"
+			stroke="url(#paint0_linear_727_1761)"
+			stroke-width="1.5"
+			stroke-miterlimit="16"
+		/>
+		<defs>
+			<linearGradient
+				id="paint0_linear_727_1761"
+				x1="8.66304"
+				y1="12.3213"
+				x2="15.9783"
+				y2="12.3213"
+				gradientUnits="userSpaceOnUse"
+			>
+				<stop stop-color="#7F1CE9" />
+				<stop offset="1" stop-color="#A71DE7" />
+			</linearGradient>
+		</defs>
+	</svg>
+);
