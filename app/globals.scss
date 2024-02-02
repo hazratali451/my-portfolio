@@ -397,6 +397,61 @@ header {
 			min-width: 234px;
 		}
 	}
+
+	.secondary-btn {
+		span {
+			position: relative;
+			z-index: 1;
+		}
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			border-radius: 10px;
+			inset: 0;
+			background: linear-gradient(90deg, #a71de7 -1.71%, #7f1ce9 105.13%);
+			opacity: 0;
+			transition: all ease 0.3s;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			border-radius: 10px;
+			inset: 2px;
+			background: #1a1a1a;
+			opacity: 0;
+			transition: all ease 0.3s;
+		}
+		&:hover {
+			border-color: transparent;
+			&::before {
+				opacity: 1;
+			}
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.social-media {
+	display: flex;
+	justify-content: center;
+	gap: 12px;
+	svg {
+		path,
+		rect {
+			transition: all ease 0.3s;
+		}
+		&:hover {
+			rect {
+				fill-opacity: 1;
+			}
+			path {
+				fill: var(--base);
+			}
+		}
+	}
 }
 .banner-wrapper {
 	display: flex;
@@ -458,11 +513,6 @@ header {
 		padding: 48px;
 		width: 100%;
 		max-width: 530px;
-		.social-media {
-			display: flex;
-			justify-content: center;
-			gap: 12px;
-		}
 		img {
 			max-width: 100%;
 			border-radius: 12px;
@@ -574,8 +624,30 @@ header {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		cursor: pointer;
+		transition: all ease 0.4s;
+		outline: 1px solid rgba(#fff, 0);
+		position: relative;
 		img {
 			object-fit: contain;
+			transition: all ease 0.4s;
+			max-width: 80px;
+		}
+		.img2 {
+			opacity: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		&:hover {
+			outline: 1px solid rgba(#fff, 0.25);
+			.img1 {
+				opacity: 0;
+			}
+			.img2 {
+				opacity: 1;
+			}
 		}
 		@include breakpoint(max-xl) {
 			padding-block: 36px;
@@ -670,12 +742,13 @@ header {
 .post-item {
 	border-radius: 12px;
 	border: 1px solid rgba(#fff, 0.1);
-	border-bottom: none;
+	border-bottom-color: transparent;
 	background: linear-gradient(
 		179deg,
 		rgba(255, 255, 255, 0.05) 0.8%,
 		rgba(255, 255, 255, 0) 150%
 	);
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
 	padding: 24px;
 	.img {
 		overflow: hidden;
@@ -691,6 +764,7 @@ header {
 	}
 	font-weight: 500;
 	&:hover {
+		border-color: rgba(#fff, 0.2);
 		.img {
 			img {
 				transform: scale(1.15);
@@ -743,6 +817,9 @@ header {
 	border-radius: 16px;
 	background: rgba(255, 255, 255, 0.05);
 	box-shadow: 0px 12px 48px 0px rgba(26, 25, 51, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0);
+
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
 	blockquote {
 		margin-block: 16px;
 		font-size: 16px;
@@ -809,6 +886,9 @@ header {
 			}
 		}
 	}
+	&:hover {
+		border-color: rgba(255, 255, 255, 0.25);
+	}
 }
 .noisy-shape-2 {
 	max-width: 100%;
@@ -848,10 +928,7 @@ header {
 		font-family: var(--inter-tight);
 	}
 	.social-media {
-		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
-		gap: 12px;
 	}
 
 	padding-top: 60px;
@@ -1160,10 +1237,27 @@ footer {
 		font-family: var(--inter);
 		padding-inline: 48px;
 		transition: all ease 0.3s;
+		position: relative;
+		span {
+			position: relative;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			border-radius: 14px;
+			inset: 0;
+			background: var(--gradient);
+			opacity: 0;
+			transition: all ease 0.3s;
+		}
+		&:hover,
 		&.active {
 			background: var(--body);
 			border-color: var(--base);
-			color: var(--base);
+			color: var(--white);
+			&::before {
+				opacity: 1;
+			}
 		}
 	}
 	margin-bottom: 48px;
@@ -1265,5 +1359,36 @@ footer {
 	padding-block: 60px;
 	@include breakpoint(max-md) {
 		padding-block: 40px;
+	}
+}
+.slider-arrow {
+	position: relative;
+	display: inline-flex;
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: var(--gradient);
+		border-radius: 50%;
+		z-index: -2;
+		opacity: 0;
+		transition: all ease 0.3s;
+	}
+	svg {
+		width: calc(100% - 4px);
+		height: calc(100% - 4px);
+		position: relative;
+		z-index: 1;
+		background: var(--section);
+		border-radius: 50%;
+	}
+	&:hover {
+		&::before {
+			opacity: 1;
+		}
 	}
 }

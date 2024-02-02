@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 import { Facebook, Github, LinkArrow, Linkedin } from "./Icon";
 import { ContactButton } from "./Navbar";
 
@@ -12,7 +14,23 @@ const Banner = () => {
 						<span className="badge">Available New Project</span>
 						<h1 className="banner-title">
 							This is Hazrat <br /> A{" "}
-							<span className="text-gradient">Web Developer</span>
+							<span className="text-gradient">
+								<TypeAnimation
+									sequence={[
+										"Web Developer",
+										2000,
+										"Traveller",
+										2000,
+										"Photographer",
+										2000,
+										"Freelancer",
+										3000,
+									]}
+									wrapper="span"
+									cursor={true}
+									repeat={Infinity}
+								/>
+							</span>
 						</h1>
 						<p className="banner-text">
 							I am a professional web app developer. I expert in HTML,
@@ -30,7 +48,7 @@ const Banner = () => {
 						<div className="banner-btn">
 							<ContactButton />
 							<Link href="#" className="secondary-btn">
-								Explore Me
+								<span>Explore Me</span>
 							</Link>
 						</div>
 					</div>

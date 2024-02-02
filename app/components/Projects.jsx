@@ -32,7 +32,7 @@ const Projects = () => {
 						type="button"
 						onClick={() => setFilter("all")}
 					>
-						All
+						<span>All</span>
 					</button>
 					<button
 						className={`${
@@ -41,7 +41,7 @@ const Projects = () => {
 						type="button"
 						onClick={() => setFilter("frontend")}
 					>
-						Frontend
+						<span>Frontend</span>
 					</button>
 					<button
 						className={`${
@@ -50,7 +50,7 @@ const Projects = () => {
 						type="button"
 						onClick={() => setFilter("full-stack")}
 					>
-						Full Stack
+						<span>Full Stack</span>
 					</button>
 				</div>
 				<div className="row gy-5">

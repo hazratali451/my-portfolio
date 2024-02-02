@@ -86,14 +86,14 @@ const YoutubeMe = () => {
 					</Swiper>
 					<div className="d-flex align-items-center gap-3 justify-content-center pt-4 mt-lg-3">
 						<button
-							className="bg-transparent no-gutter border-0"
+							className="bg-transparent no-gutter border-0 slider-arrow"
 							type="button"
 							onClick={() => goPrev()}
 						>
 							<ArrowLeft />
 						</button>
 						<button
-							className="bg-transparent no-gutter border-0"
+							className="bg-transparent no-gutter border-0 slider-arrow"
 							type="button"
 							onClick={() => goNext()}
 						>
