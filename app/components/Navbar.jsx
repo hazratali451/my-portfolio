@@ -9,6 +9,30 @@ const Navbar = () => {
 	const [open, setOpen] = React.useState(false);
 	const scroll = useScroll();
 
+	const handleMenuActive = () => {
+		const allQuery = document.querySelectorAll(".target-id");
+		allQuery.forEach((item) => {
+			if (window.scrollY + 100 >= item.offsetTop) {
+				const id = item.id;
+				const allMenu = document.querySelectorAll(".menu li a");
+				allMenu.forEach((menu) => {
+					menu.classList.remove("active");
+					if (menu.getAttribute("href") === `#${id}`) {
+						menu.classList.add("active");
+					}
+				});
+			}
+		});
+	};
+
+	React.useEffect(() => {
+		handleMenuActive();
+		const scroll = window.addEventListener("scroll", handleMenuActive);
+		return () => {
+			window.removeEventListener("scroll", scroll);
+		};
+	}, []);
+
 	return (
 		<>
 			<header className={scroll > 0 ? "active" : ""}>
@@ -103,7 +127,7 @@ const Navbar = () => {
 export const ContactButton = ({ text, ...rest }) => {
 	return (
 		<>
-			<Link href="#contact" className="cmn-btn" {...rest}>
+			<Link href="#contact" shallow={true} className="cmn-btn" {...rest}>
 				<span>
 					{text || "Contact Me"} <ContactIcon />
 				</span>
