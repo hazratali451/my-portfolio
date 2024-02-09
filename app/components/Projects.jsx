@@ -21,158 +21,161 @@ const Projects = () => {
 	}, [filter]);
 
 	return (
-		<section className="projects-section">
-			<div className="container">
-				<div className="section-title mb-4">
-					<h3 className="title">My Projects</h3>
-					<Link href="" className="cmn-btn">
-						<span>
-							See All Works <ContactIcon />{" "}
-						</span>
-					</Link>
+		<>
+			<div className="target-id" id="works" />
+			<section className="projects-section">
+				<div className="container">
+					<div className="section-title mb-4">
+						<h3 className="title">My Projects</h3>
+						<Link href="" className="cmn-btn">
+							<span>
+								See All Works <ContactIcon />{" "}
+							</span>
+						</Link>
+					</div>
+					<div className="tab-menu">
+						<button
+							className={`${filter === "all" ? "active" : ""} no-gutter`}
+							type="button"
+							onClick={() => setFilter("all")}
+						>
+							<span>All</span>
+						</button>
+						<button
+							className={`${
+								filter === "frontend" ? "active" : ""
+							} no-gutter`}
+							type="button"
+							onClick={() => setFilter("frontend")}
+						>
+							<span>Frontend</span>
+						</button>
+						<button
+							className={`${
+								filter === "full-stack" ? "active" : ""
+							} no-gutter`}
+							type="button"
+							onClick={() => setFilter("full-stack")}
+						>
+							<span>Full Stack</span>
+						</button>
+					</div>
+					<div className="row gy-5">
+						{filteredData?.map((item, index) => (
+							<div className="col-sm-6" key={item._id}>
+								<div
+									className="project-item"
+									onClick={() => {
+										setActive(item);
+										setTimeout(() => {
+											setShow(true);
+										}, 0);
+									}}
+								>
+									<div className="img">
+										<Image
+											src={item.img}
+											width={800}
+											height={800}
+											alt="project"
+										/>
+									</div>
+									<div className="content d-flex justify-content-between align-items-start gap-2">
+										<div className="w-0 flex-grow-1">
+											<h4 className="title">{item.title}</h4>
+											<ul className="tags">
+												{item.tags.map((tag, index) => (
+													<li key={index}>{tag}</li>
+												))}
+											</ul>
+										</div>
+										<LinkArrow />
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
 				</div>
-				<div className="tab-menu">
-					<button
-						className={`${filter === "all" ? "active" : ""} no-gutter`}
-						type="button"
-						onClick={() => setFilter("all")}
-					>
-						<span>All</span>
-					</button>
-					<button
-						className={`${
-							filter === "frontend" ? "active" : ""
-						} no-gutter`}
-						type="button"
-						onClick={() => setFilter("frontend")}
-					>
-						<span>Frontend</span>
-					</button>
-					<button
-						className={`${
-							filter === "full-stack" ? "active" : ""
-						} no-gutter`}
-						type="button"
-						onClick={() => setFilter("full-stack")}
-					>
-						<span>Full Stack</span>
-					</button>
-				</div>
-				<div className="row gy-5">
-					{filteredData?.map((item, index) => (
-						<div className="col-sm-6" key={item._id}>
-							<div
-								className="project-item"
-								onClick={() => {
-									setActive(item);
-									setTimeout(() => {
-										setShow(true);
-									}, 0);
-								}}
-							>
-								<div className="img">
+				<Modal
+					show={show}
+					onHide={setShow}
+					centered
+					size="xl"
+					className="__modal"
+				>
+					<Modal.Body>
+						<Collapse in={active}>
+							<div className="project-single">
+								<div className="project-single-thumb">
 									<Image
-										src={item.img}
-										width={800}
-										height={800}
-										alt="project"
+										src={active?.img}
+										width={900}
+										height={900}
+										alt={active?.title}
 									/>
 								</div>
-								<div className="content d-flex justify-content-between align-items-start gap-2">
-									<div className="w-0 flex-grow-1">
-										<h4 className="title">{item.title}</h4>
-										<ul className="tags">
-											{item.tags.map((tag, index) => (
-												<li key={index}>{tag}</li>
-											))}
-										</ul>
+								<div className="project-single-content">
+									<span className="badge">{active?.type}</span>
+									<h2 className="title">{active?.title}</h2>
+									<h6>Software Used</h6>
+									<div className="technologies">
+										{active?.tecnology?.map((item, index) => (
+											<div key={index}>
+												<Image
+													src={item.img}
+													width={36}
+													height={36}
+													alt={item.name}
+												/>
+											</div>
+										))}
 									</div>
-									<LinkArrow />
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
-			<Modal
-				show={show}
-				onHide={setShow}
-				centered
-				size="xl"
-				className="__modal"
-			>
-				<Modal.Body>
-					<Collapse in={active}>
-						<div className="project-single">
-							<div className="project-single-thumb">
-								<Image
-									src={active?.img}
-									width={900}
-									height={900}
-									alt={active?.title}
-								/>
-							</div>
-							<div className="project-single-content">
-								<span className="badge">{active?.type}</span>
-								<h2 className="title">{active?.title}</h2>
-								<h6>Software Used</h6>
-								<div className="technologies">
-									{active?.tecnology?.map((item, index) => (
-										<div key={index}>
-											<Image
-												src={item.img}
-												width={36}
-												height={36}
-												alt={item.name}
-											/>
-										</div>
-									))}
-								</div>
-								<Link href="" className="cmn-btn">
-									<span>
-										View Project <ContactIcon />
-									</span>
-								</Link>
-								<div
-									className="review-item mt-32"
-									style={{ maxWidth: "419px" }}
-								>
-									<StarGroup />
-									<blockquote>
-										I have never seen a platform that is completely
-										free, where creatives are given this much power to
-										not just only show their work, but also network,
-										get hired for doing what they enjoy and love.
-										Tabulio is simply the BEST!!
-									</blockquote>
-									<div className="client">
-										<div className="img">
-											<Image
-												src="/img/client.png"
-												width={72}
-												height={72}
-												alt="Eze Michael"
-											/>
-										</div>
-										<div className="info">
-											<h5 className="name">Eze Michael</h5>
-											<span className="position">
-												Creative Director
-											</span>
-										</div>
-									</div>
-								</div>
-								<div className="mt-4">
-									<Link href="" className="text-gradient text-20">
-										See All 51 Review <ArrowIcon />
+									<Link href="" className="cmn-btn">
+										<span>
+											View Project <ContactIcon />
+										</span>
 									</Link>
+									<div
+										className="review-item mt-32"
+										style={{ maxWidth: "419px" }}
+									>
+										<StarGroup />
+										<blockquote>
+											I have never seen a platform that is completely
+											free, where creatives are given this much power
+											to not just only show their work, but also
+											network, get hired for doing what they enjoy
+											and love. Tabulio is simply the BEST!!
+										</blockquote>
+										<div className="client">
+											<div className="img">
+												<Image
+													src="/img/client.png"
+													width={72}
+													height={72}
+													alt="Eze Michael"
+												/>
+											</div>
+											<div className="info">
+												<h5 className="name">Eze Michael</h5>
+												<span className="position">
+													Creative Director
+												</span>
+											</div>
+										</div>
+									</div>
+									<div className="mt-4">
+										<Link href="" className="text-gradient text-20">
+											See All 51 Review <ArrowIcon />
+										</Link>
+									</div>
 								</div>
 							</div>
-						</div>
-					</Collapse>
-				</Modal.Body>
-			</Modal>
-		</section>
+						</Collapse>
+					</Modal.Body>
+				</Modal>
+			</section>
+		</>
 	);
 };
 const portfolio = [

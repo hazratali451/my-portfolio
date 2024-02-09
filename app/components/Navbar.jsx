@@ -8,6 +8,7 @@ import { ClearIcon, ContactIcon, HamburgerIcon } from "./Icon";
 const Navbar = () => {
 	const [open, setOpen] = React.useState(false);
 	const scroll = useScroll();
+
 	return (
 		<>
 			<header className={scroll > 0 ? "active" : ""}>
@@ -44,18 +45,24 @@ const Navbar = () => {
 							</div>
 							<ul className="menu" onClick={() => setOpen(false)}>
 								<li>
-									<a href="#home" className="active">
+									<Link shallow={true} href="#home">
 										Home
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a href="#portfolio">Portfolio</a>
+									<Link shallow={true} href="#portfolio">
+										Portfolio
+									</Link>
 								</li>
 								<li>
-									<a href="#works">Works</a>
+									<Link shallow={true} href="#works">
+										Works
+									</Link>
 								</li>
 								<li>
-									<a href="#contact">Contact</a>
+									<Link shallow={true} href="#contact">
+										Contact
+									</Link>
 								</li>
 							</ul>
 							<Image

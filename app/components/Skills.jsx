@@ -2,25 +2,28 @@
 
 const Skills = () => {
 	return (
-		<section className="skills-section">
-			<div className="container">
-				<div className="section-title">
-					<h3 className="title">My Skills & Tools</h3>
-					<div className="txt1" style={{ maxWidth: "438px" }}>
-						Highly skilled at progressive <br /> enhancement design
-						systems & UI Engineering
+		<>
+			<div className="target-id" id="portfolio" />
+			<section className="skills-section">
+				<div className="container">
+					<div className="section-title">
+						<h3 className="title">My Skills & Tools</h3>
+						<div className="txt1" style={{ maxWidth: "438px" }}>
+							Highly skilled at progressive <br /> enhancement design
+							systems & UI Engineering
+						</div>
+					</div>
+					<div className="skills">
+						{data.map((item, index) => (
+							<div className="skill" key={index}>
+								<img src={item.img} alt="skill" className="img1" />
+								<img src={item.img2} alt="skill" className="img2" />
+							</div>
+						))}
 					</div>
 				</div>
-				<div className="skills">
-					{data.map((item, index) => (
-						<div className="skill" key={index}>
-							<img src={item.img} alt="skill" className="img1" />
-							<img src={item.img2} alt="skill" className="img2" />
-						</div>
-					))}
-				</div>
-			</div>
-		</section>
+			</section>
+		</>
 	);
 };
 
