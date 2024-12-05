@@ -1,0 +1,8 @@
+node_modules
+.dockerignore
+Dockerfile
+.next
+.env.local
+.env.development.local
+npm-debug.log
+yarn-debug.log
