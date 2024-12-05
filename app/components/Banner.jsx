@@ -15,7 +15,7 @@ const Banner = () => {
             <div className="banner-content">
               <span className="badge">Available New Project</span>
               <h1 className="banner-title">
-                This is Hazrat Ali <br /> A{" "}
+                This is Hazrat <br /> A{" "}
                 <span className="text-gradient">
                   <TypeAnimation
                     sequence={[
