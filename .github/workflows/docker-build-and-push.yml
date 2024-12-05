@@ -36,6 +36,8 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           port: 22
           script: |
+            #Login to Docker Hub
+            sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             # Pull the latest Docker image
             docker pull hazratali451/my-portfolio:latest
             # Stop and remove the old container (if exists)
