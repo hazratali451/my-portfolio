@@ -21,11 +21,11 @@ const Banner = () => {
                     sequence={[
                       "Web Developer",
                       2000,
-                      "Traveller",
+                      "React Developer",
                       2000,
-                      "Photographer",
-                      2000,
-                      "Freelancer",
+                      "Top Rated",
+                      500,
+                      "Fiverr Freelancer",
                       3000,
                     ]}
                     wrapper="span"
@@ -37,7 +37,7 @@ const Banner = () => {
               <p className="banner-text">
                 I am a professional web app developer. I expert in HTML, CSS,
                 SCSS, JavsScript, React.js, Node.js, Express.js. I have done
-                more than 250 projects worldwide. I have more than 200+ , 5 star{" "}
+                more than 250 projects worldwide. I have more than 500+ , 5 star{" "}
                 <br /> rating in{" "}
                 <Link
                   href="https://www.fiverr.com/hazratali451"
