@@ -39,6 +39,6 @@ jobs:
             # Pull the latest Docker image
             docker pull hazratali451/my-portfolio:latest
             # Stop and remove the old container (if exists)
-            docker rm -f my-portfolio || true
+            docker rm -f portfolio || true
             # Run the new container
-            docker run -d --name my-portfolio -p 80:3000 hazratali451/my-portfolio:latest
+            docker run -d --name portfolio -p 80:3000 hazratali451/my-portfolio:latest
