@@ -13,12 +13,14 @@ const Banner = () => {
         <div className="container">
           <div className="banner-wrapper">
             <div className="banner-content">
-              <span className="badge">Available New Project</span>
+              <span className="badge">Available</span>
               <h1 className="banner-title">
                 This is Hazrat <br /> A{" "}
                 <span className="text-gradient">
                   <TypeAnimation
                     sequence={[
+                      "Full Stack",
+                      500,
                       "Web Developer",
                       2000,
                       "React Developer",
@@ -35,10 +37,11 @@ const Banner = () => {
                 </span>
               </h1>
               <p className="banner-text">
-                I am a professional web app developer. I expert in HTML, CSS,
-                SCSS, JavsScript, React.js, Node.js, Express.js. I have done
-                more than 250 projects worldwide. I have more than 500+ , 5 star{" "}
-                <br /> rating in{" "}
+                I am a professional web application developer specializing in
+                MERN Stack development. Additionally, I have expertise in Redux,
+                AWS, Docker, and other cutting-edge technologies. With over 650
+                successfully completed projects worldwide, I am proud to have
+                received more than 500 five-star reviews on <br />{" "}
                 <Link
                   href="https://www.fiverr.com/hazratali451"
                   target="_blank"
@@ -47,9 +50,10 @@ const Banner = () => {
                   Fiverr <LinkArrow />
                 </Link>
               </p>
+
               <div className="banner-btn">
                 <ContactButton />
-                <Link href="#" className="secondary-btn">
+                <Link href="#portfolio" className="secondary-btn">
                   <span>Explore Me</span>
                 </Link>
               </div>
@@ -64,14 +68,17 @@ const Banner = () => {
               <h5 className="name mt-3 mb-8">Hazrat Ali</h5>
               <div className="mb-3">web app developer</div>
               <div className="social-media">
-                <Link href="">
-                  <Github />
-                </Link>
-                <Link href="">
+                <Link target="_blank" href="www.linkedin.com/in/hazratali451">
                   <Linkedin />
                 </Link>
-                <Link href="">
+                <Link
+                  target="_blank"
+                  href="https://www.facebook.com/HazratAli451/"
+                >
                   <Facebook />
+                </Link>
+                <Link target="_blank" href="https://github.com/hazratali451">
+                  <Github />
                 </Link>
               </div>
             </div>
